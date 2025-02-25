@@ -8,14 +8,14 @@
 substitutions:
   device_name: home-assistant-glow
   friendly_name: Home Assistant Glow
-  project_version: "4.2.3"
-  device_description: "Measure your energy consumption with the pulse LED on your smart meter - ESP32 Generic"
+  project_version: "5.0.0"
+  device_description: "Measure your energy consumption with the pulse LED on your smart meter - ESP32-C3 Supermini"
 
   # Define the GPIO pins
-  pulse_pin: GPIO26
-  status_led: GPIO5
-  led_pin_red: GPIO2
-  led_pin_green: GPIO4
+  pulse_pin: GPIO4
+  status_led: GPIO0
+  led_pin_red: GPIO1
+  led_pin_green: GPIO2
 
 esphome:
   name: '${device_name}'
@@ -23,21 +23,21 @@ esphome:
   name_add_mac_suffix: true
   min_version: 2024.6.0
   project:
-    name: "klaasnicolaas.home-assistant-glow"
+    name: "thomuk.home-assistant-glow-c3"
     version: "${project_version}"
 
 dashboard_import:
-  package_import_url: github://klaasnicolaas/home-assistant-glow/home-assistant-glow/esp32.yaml@main
+  package_import_url: https://github.com/ThomUK/home-assistant-glow-c3/esp32-c3-supermini.yaml@main
 
 esp32:
-  board: esp32dev
+  board: esp32-c3-devkitm-1
   framework:
     type: arduino
 
 packages:
   remote_package:
-    url: https://github.com/klaasnicolaas/home-assistant-glow/
-    ref: "4.2.3"
+    url: https://github.com/ThomUK/home-assistant-glow-c3/
+    ref: "5.0.0"
     files:
       - components/basis.yaml
       - components/updates.yaml
