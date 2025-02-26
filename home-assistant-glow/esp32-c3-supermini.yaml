@@ -27,7 +27,7 @@ esphome:
     version: "${project_version}"
 
 dashboard_import:
-  package_import_url: https://github.com/ThomUK/home-assistant-glow-c3/esp32-c3-supermini.yaml@main
+  package_import_url: github://ThomUK/home-assistant-glow-c3/esp32-c3-supermini.yaml@main
 
 esp32:
   board: esp32-c3-devkitm-1
